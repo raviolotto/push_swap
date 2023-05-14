@@ -6,7 +6,7 @@
 /*   By: jcardina <jcardina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/14 18:06:56 by jcardina          #+#    #+#             */
-/*   Updated: 2023/05/14 18:52:56 by jcardina         ###   ########.fr       */
+/*   Updated: 2023/05/14 19:42:54 by jcardina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,15 @@
 void	ft_printlst(p_list **stack_a)
 {
 	p_list	*tmp;
+	p_list	*save;
 	int i;
 
-	while(*stack_a)
+	save = *stack_a;
+	while(save)
 	{
-		tmp = (*stack_a)->next;
-		i = (*stack_a)->content;
+		tmp = save->next;
+		i = save->content;
 		printf("%d .", i);
-		*stack_a = tmp;
+		save = tmp;
 	}
 }
