@@ -6,7 +6,7 @@
 #    By: jcardina <jcardina@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/12 15:52:29 by jcardina          #+#    #+#              #
-#    Updated: 2023/05/12 16:09:13 by jcardina         ###   ########.fr        #
+#    Updated: 2023/05/14 18:39:37 by jcardina         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,8 +17,9 @@ LIBFT = libft/libft.a
 PRINTF = ft_printf/libftprintf.a
 
 SRC = \
-	moves.c \
+	listutils.c\
 	push_swap.c \
+	workutils.c \
 
 OBJ = $(SRC:%.c=%.o)
 
@@ -46,7 +47,6 @@ fclean: clean
 	rm -f $(NAME)
 	@echo "\033[33me niente nome\033[0m"
 
-re:
-	fclean all
+re: fclean all
 
 .PHONY:		all clean fclean re
