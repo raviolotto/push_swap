@@ -6,7 +6,7 @@
 #    By: jcardina <jcardina@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/12 15:52:29 by jcardina          #+#    #+#              #
-#    Updated: 2023/05/14 19:37:26 by jcardina         ###   ########.fr        #
+#    Updated: 2023/05/14 21:22:16 by jcardina         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,8 @@ SRC = \
 	listutils.c\
 	push_swap.c \
 	workutils.c \
-	moves.c \
+	moves_r.c \
+	moves_rr.c \
 
 OBJ = $(SRC:%.c=%.o)
 

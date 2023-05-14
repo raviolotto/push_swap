@@ -6,7 +6,7 @@
 /*   By: jcardina <jcardina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 14:10:51 by jcardina          #+#    #+#             */
-/*   Updated: 2023/05/14 19:43:09 by jcardina         ###   ########.fr       */
+/*   Updated: 2023/05/14 21:27:52 by jcardina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,20 @@ int	main(int ac, char ** av)
 		return (0);
 	list_init(ac, av, &stack_a);
 	ft_printlst(&stack_a);
-	ra(&stack_a);
+	index_init(&stack_a);
+	ft_printindex(&stack_a);
+	write(1, "\n", 1);
+	rra(&stack_a);
 	ft_printlst(&stack_a);
+	ft_printindex(&stack_a);
+	write(1, "\n", 1);
+	rra(&stack_a);
+	ft_printlst(&stack_a);
+	ft_printindex(&stack_a);
+	write(1, "\n", 1);
+	rra(&stack_a);
+	ft_printlst(&stack_a);
+	ft_printindex(&stack_a);
+	write(1, "\n", 1);
 	return (0);
 }
