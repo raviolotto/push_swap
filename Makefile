@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jcardina <jcardina@student.42.fr>          +#+  +:+       +#+         #
+#    By: amema <amema@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/12 15:52:29 by jcardina          #+#    #+#              #
-#    Updated: 2023/05/15 14:58:21 by jcardina         ###   ########.fr        #
+#    Updated: 2023/05/15 18:08:10 by amema            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,6 +23,7 @@ SRC = \
 	moves_r.c \
 	moves_rr.c \
 	moves_p.c \
+	moves_s.c \
 
 OBJ = $(SRC:%.c=%.o)
 
