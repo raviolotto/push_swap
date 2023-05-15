@@ -6,7 +6,7 @@
 /*   By: jcardina <jcardina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 12:29:13 by jcardina          #+#    #+#             */
-/*   Updated: 2023/05/14 21:20:10 by jcardina         ###   ########.fr       */
+/*   Updated: 2023/05/15 14:58:08 by jcardina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ void	rb(p_list **stack_b);
 void	rra(p_list **stack_a);
 void	rrb(p_list **stack_b);
 void	rrr(p_list **stack_a, p_list **stack_b);
+void	pa(p_list **stack_a, p_list **stack_b);
 
 #endif
 
