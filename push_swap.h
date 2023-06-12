@@ -6,7 +6,7 @@
 /*   By: jcardina <jcardina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 12:29:13 by jcardina          #+#    #+#             */
-/*   Updated: 2023/06/12 19:07:59 by jcardina         ###   ########.fr       */
+/*   Updated: 2023/06/12 19:58:53 by jcardina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ void	index_init(t_listx **stack_a);
 void	ft_mid(t_listx **stack_a, t_memo *mem);
 void	ft_min_max(t_listx **stack_a, t_memo *mem);
 void	init_b(t_listx **stack_a, t_listx **stack_b, t_memo *mem);
+void	order_a(t_listx **stack_a, t_memo *mem);
 //stampa valori di controllo (non servono per la versione finale)
 void	ft_printindex(t_listx **stack_a);
 void	ft_printlst(t_listx **stack_a);

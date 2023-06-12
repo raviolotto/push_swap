@@ -6,7 +6,7 @@
 /*   By: jcardina <jcardina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/12 17:14:27 by jcardina          #+#    #+#             */
-/*   Updated: 2023/06/12 19:15:51 by jcardina         ###   ########.fr       */
+/*   Updated: 2023/06/12 20:01:17 by jcardina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,11 +46,11 @@ void	ft_min_max(t_listx **stack_a, t_memo *mem)
 
 	tmp = *stack_a;
 	mem -> min = tmp ->content;
-	while(tmp)
+	while (tmp)
 	{
-		if(tmp ->content < mem -> min)
+		if (tmp ->content < mem -> min)
 			mem ->min = tmp ->content;
-		if(tmp ->content > mem -> max)
+		if (tmp ->content > mem -> max)
 			mem ->max = tmp ->content;
 		tmp = tmp ->next;
 	}
@@ -61,12 +61,12 @@ void	init_b(t_listx **stack_a, t_listx **stack_b, t_memo *mem)
 	t_listx	*tmp;
 
 	ft_mid(stack_a, mem);
-	while(ps_lstsize(*stack_a) != 3)
+	while (ps_lstsize(*stack_a) != 3)
 	{
 		tmp = *stack_a;
-		if((tmp ->content < mem ->mid) && (tmp -> content != mem ->min))
+		if ((tmp ->content < mem ->mid) && (tmp -> content != mem ->min))
 			pb(stack_a, stack_b);
-		if((tmp ->content > mem ->mid) && (tmp -> content != mem ->max))
+		if ((tmp ->content > mem ->mid) && (tmp -> content != mem ->max))
 		{
 			pb(stack_a, stack_b);
 			rb(stack_b);
@@ -74,4 +74,41 @@ void	init_b(t_listx **stack_a, t_listx **stack_b, t_memo *mem)
 		else
 			ra(stack_a);
 	}
+	order_a(stack_a, mem);
+}
+
+void	order_a(t_listx **stack_a, t_memo *mem)
+{
+	t_listx*tmp;
+
+	tmp = *stack_a;
+	if (tmp ->content == mem->min)
+	{
+		tmp = tmp ->next;
+		if (tmp -> content == mem ->max)
+		 {
+			sa(stack_a);
+			ra(stack_a);
+		 }
+	}
+	else if (tmp ->content == mem->mid)
+	{
+		tmp = tmp ->next;
+		if (tmp -> content == mem ->max)
+			rra(stack_a);
+		else
+			sa(stack_a);
+	}
+	else if (tmp ->content == mem->max)
+	{
+		tmp = tmp ->next;
+		if (tmp -> content == mem ->min)
+			ra(stack_a);
+		else
+		{
+			sa(stack_a);
+			rra(stack_a);
+		}
+	}
+	return ;
 }

@@ -6,7 +6,7 @@
 /*   By: jcardina <jcardina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/14 21:22:43 by jcardina          #+#    #+#             */
-/*   Updated: 2023/06/12 18:27:10 by jcardina         ###   ########.fr       */
+/*   Updated: 2023/06/12 19:30:02 by jcardina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ void	rra(t_listx **stack_a)
 	ps_lstadd_front(stack_a, last);
 	index_init(stack_a);
 	write(1, "rra", 3);
+	write(1, "\n", 1);
 }
 
 void	rrb(t_listx **stack_b)
@@ -44,6 +45,7 @@ void	rrb(t_listx **stack_b)
 	ps_lstadd_front(stack_b, last);
 	index_init(stack_b);
 	write(1, "rrb", 3);
+	write(1, "\n", 1);
 }
 
 void	rrr(t_listx **stack_a, t_listx **stack_b)
@@ -70,4 +72,5 @@ void	rrr(t_listx **stack_a, t_listx **stack_b)
 	ps_lstadd_front(stack_b, last);
 	index_init(stack_b);
 	write(1, "rrr", 3);
+	write(1, "\n", 1);
 }
