@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amema <amema@student.42.fr>                +#+  +:+       +#+        */
+/*   By: jcardina <jcardina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 14:10:51 by jcardina          #+#    #+#             */
-/*   Updated: 2023/05/15 18:15:30 by amema            ###   ########.fr       */
+/*   Updated: 2023/06/12 16:51:01 by jcardina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,25 +52,5 @@ int	main(int ac, char ** av)
 	if(ac < 2)
 		return (0);
 	list_init(ac, av, &stack_a);
-	list_init(ac, av, &stack_b);
-	//check
-	ft_printlst(&stack_a);
-	ft_printlst(&stack_b);
-	 write(1, "\n", 1);
-	pb(&stack_a, &stack_b);
-	ft_printlst(&stack_a);
-	write(1, " ", 1);
-	ft_printlst(&stack_b);
-	write(1, "\n", 1);
-	pa(&stack_a, &stack_b);
-	ft_printlst(&stack_a);
-	write(1, " ", 1);
-	ft_printlst(&stack_b);
-	write(1, "\n", 1);
-	ss(&stack_b, &stack_a);
-	ft_printlst(&stack_a);
-	write(1, " ", 1);
-	ft_printlst(&stack_b);
-	write(1, "\n", 1);
 	return (0);
 }

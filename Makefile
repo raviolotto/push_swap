@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: amema <amema@student.42.fr>                +#+  +:+       +#+         #
+#    By: jcardina <jcardina@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/12 15:52:29 by jcardina          #+#    #+#              #
-#    Updated: 2023/05/15 18:08:10 by amema            ###   ########.fr        #
+#    Updated: 2023/06/12 17:10:35 by jcardina         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,10 +20,10 @@ SRC = \
 	listutils.c\
 	push_swap.c \
 	workutils.c \
-	moves_r.c \
-	moves_rr.c \
-	moves_p.c \
-	moves_s.c \
+	moves/moves_r.c \
+	moves/moves_rr.c \
+	moves/moves_p.c \
+	moves/moves_s.c \
 
 OBJ = $(SRC:%.c=%.o)
 

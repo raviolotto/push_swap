@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   moves_s.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amema <amema@student.42.fr>                +#+  +:+       +#+        */
+/*   By: jcardina <jcardina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 17:50:06 by amema             #+#    #+#             */
-/*   Updated: 2023/05/15 18:12:37 by amema            ###   ########.fr       */
+/*   Updated: 2023/06/12 17:12:20 by jcardina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 void    sa(p_list **stack_a)
 {
