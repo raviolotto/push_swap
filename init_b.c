@@ -6,7 +6,7 @@
 /*   By: jcardina <jcardina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/12 17:14:27 by jcardina          #+#    #+#             */
-/*   Updated: 2023/06/12 20:01:17 by jcardina         ###   ########.fr       */
+/*   Updated: 2023/06/12 20:27:40 by jcardina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,38 +77,31 @@ void	init_b(t_listx **stack_a, t_listx **stack_b, t_memo *mem)
 	order_a(stack_a, mem);
 }
 
-void	order_a(t_listx **stack_a, t_memo *mem)
+void	order_a(t_listx **s_a, t_memo *mem)
 {
-	t_listx*tmp;
+	t_listx	*tmp;
 
-	tmp = *stack_a;
-	if (tmp ->content == mem->min)
+	tmp = *s_a;
+	if (tmp ->content == mem->min && ps_lstlast(*s_a)-> content == mem ->mid)
 	{
-		tmp = tmp ->next;
-		if (tmp -> content == mem ->max)
-		 {
-			sa(stack_a);
-			ra(stack_a);
-		 }
+		sa(s_a);
+		ra(s_a);
 	}
 	else if (tmp ->content == mem->mid)
 	{
-		tmp = tmp ->next;
-		if (tmp -> content == mem ->max)
-			rra(stack_a);
+		if (ps_lstlast(*s_a)-> content == mem ->min)
+			rra(s_a);
 		else
-			sa(stack_a);
+			sa(s_a);
 	}
 	else if (tmp ->content == mem->max)
 	{
-		tmp = tmp ->next;
-		if (tmp -> content == mem ->min)
-			ra(stack_a);
+		if (ps_lstlast(*s_a)-> content == mem ->mid)
+			ra(s_a);
 		else
 		{
-			sa(stack_a);
-			rra(stack_a);
+			sa(s_a);
+			rra(s_a);
 		}
 	}
-	return ;
 }
