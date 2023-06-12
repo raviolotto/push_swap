@@ -6,7 +6,7 @@
 /*   By: jcardina <jcardina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/14 21:22:43 by jcardina          #+#    #+#             */
-/*   Updated: 2023/06/12 18:19:06 by jcardina         ###   ########.fr       */
+/*   Updated: 2023/06/12 18:27:10 by jcardina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	rra(t_listx **stack_a)
 	t_listx	*prev;
 
 	last = *stack_a;
-	while(last->next != NULL)
+	while (last->next != NULL)
 	{
 		prev = last;
 		last = last->next;
@@ -35,7 +35,7 @@ void	rrb(t_listx **stack_b)
 	t_listx	*prev;
 
 	last = *stack_b;
-	while(last->next != NULL)
+	while (last->next != NULL)
 	{
 		prev = last;
 		last = last->next;
@@ -52,7 +52,7 @@ void	rrr(t_listx **stack_a, t_listx **stack_b)
 	t_listx	*prev;
 
 	last = *stack_a;
-	while(last->next != NULL)
+	while (last->next != NULL)
 	{
 		prev = last;
 		last = last->next;
@@ -61,7 +61,7 @@ void	rrr(t_listx **stack_a, t_listx **stack_b)
 	ps_lstadd_front(stack_a, last);
 	index_init(stack_a);
 	last = *stack_b;
-	while(last->next != NULL)
+	while (last->next != NULL)
 	{
 		prev = last;
 		last = last->next;

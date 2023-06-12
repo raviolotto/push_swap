@@ -6,7 +6,7 @@
 /*   By: jcardina <jcardina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 12:29:13 by jcardina          #+#    #+#             */
-/*   Updated: 2023/06/12 18:20:56 by jcardina         ###   ########.fr       */
+/*   Updated: 2023/06/12 18:36:42 by jcardina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ typedef struct s_listx
 {
 	int				index;
 	int				content;
-	struct	s_listx	*next;
+	struct s_listx	*next;
 }	t_listx;
 
 typedef struct s_memo
@@ -44,6 +44,7 @@ void	fill_stack(char **av, t_listx **stack_a, int row_nb, int i);
 void	index_init(t_listx **stack_a);
 //pushare in b
 void	ft_mid(t_listx **stack_a, t_memo *mem);
+void	ft_min_max(t_listx **stack_a, t_memo *mem);
 //stampa valori di controllo (non servono per la versione finale)
 void	ft_printindex(t_listx **stack_a);
 void	ft_printlst(t_listx **stack_a);
@@ -55,8 +56,8 @@ void	rrb(t_listx **stack_b);
 void	rrr(t_listx **stack_a, t_listx **stack_b);
 void	pb(t_listx **stack_a, t_listx **stack_b);
 void	pa(t_listx **stack_a, t_listx **stack_b);
-void    sa(t_listx **stack_a);
-void    sb(t_listx **stack_b);
-void    ss(t_listx **stack_b, t_listx **stack_a);
+void	sa(t_listx **stack_a);
+void	sb(t_listx **stack_b);
+void	ss(t_listx **stack_b, t_listx **stack_a);
 
 #endif

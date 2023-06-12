@@ -6,7 +6,7 @@
 /*   By: jcardina <jcardina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/12 17:14:27 by jcardina          #+#    #+#             */
-/*   Updated: 2023/06/12 18:19:06 by jcardina         ###   ########.fr       */
+/*   Updated: 2023/06/12 18:35:54 by jcardina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,5 +36,22 @@ void	ft_mid(t_listx **stack_a, t_memo *mem)
 		n = n->next;
 		tmp = *stack_a;
 		cont = 0;
+	}
+	ft_min_max(stack_a, mem);
+}
+
+void	ft_min_max(t_listx **stack_a, t_memo *mem)
+{
+	t_listx	*tmp;
+
+	tmp = *stack_a;
+	mem -> min = tmp ->content;
+	while(tmp)
+	{
+		if(tmp ->content < mem -> min)
+			mem ->min = tmp ->content;
+		if(tmp ->content > mem -> max)
+			mem ->max = tmp ->content;
+		tmp = tmp ->next;
 	}
 }

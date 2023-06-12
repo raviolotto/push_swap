@@ -6,7 +6,7 @@
 /*   By: jcardina <jcardina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/14 18:06:56 by jcardina          #+#    #+#             */
-/*   Updated: 2023/06/12 18:21:50 by jcardina         ###   ########.fr       */
+/*   Updated: 2023/06/12 18:27:39 by jcardina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,10 @@ void	ft_printlst(t_listx **stack_a)
 {
 	t_listx	*tmp;
 	t_listx	*save;
-	int i;
+	int		i;
 
 	save = *stack_a;
-	while(save)
+	while (save)
 	{
 		tmp = save->next;
 		i = save->content;
@@ -33,11 +33,11 @@ void	index_init(t_listx **stack_a)
 {
 	t_listx	*tmp;
 	t_listx	*save;
-	int i;
+	int		i;
 
 	i = 0;
 	save = *stack_a;
-	while(save)
+	while (save)
 	{
 		tmp = save->next;
 		save->index = i;
@@ -50,10 +50,10 @@ void	ft_printindex(t_listx **stack_a)
 {
 	t_listx	*tmp;
 	t_listx	*save;
-	int i;
+	int		i;
 
 	save = *stack_a;
-	while(save)
+	while (save)
 	{
 		tmp = save->next;
 		i = save->index;
