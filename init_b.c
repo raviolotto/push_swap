@@ -1,41 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   moves_p.c                                          :+:      :+:    :+:   */
+/*   init_b.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jcardina <jcardina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/15 14:52:57 by jcardina          #+#    #+#             */
+/*   Created: 2023/06/12 17:14:27 by jcardina          #+#    #+#             */
 /*   Updated: 2023/06/12 18:19:06 by jcardina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "push_swap.h"
 
-void	pb(t_listx **stack_a, t_listx **stack_b)
+void	ft_mid(t_listx **stack_a, t_memo *mem)
 {
+	int		cont;
+	int		size;
 	t_listx	*tmp;
+	t_listx	*n;
 
-	if (*stack_a == NULL)
-		return ;
+	size = ps_lstsize(*stack_a);
+	cont = 0;
 	tmp = *stack_a;
-	*stack_a = (*stack_a)->next;
-	ps_lstadd_front(stack_b, tmp);
-	index_init(stack_b);
-	write(1, "pb", 2);
-	return ;
-}
-
-void	pa(t_listx **stack_a, t_listx **stack_b)
-{
-	t_listx	*tmp;
-
-	if (*stack_b == NULL)
-		return ;
-	tmp = *stack_b;
-	*stack_b = (*stack_b)->next;
-	ps_lstadd_front(stack_a, tmp);
-	index_init(stack_a);
-	write(1, "pa", 2);
-	return ;
+	n = *stack_a;
+	while (n)
+	{
+		while (tmp)
+		{
+			if (n ->content > tmp ->content)
+				cont++;
+			tmp = tmp -> next;
+		}
+		if (cont == size / 2)
+			mem ->mid = n ->content;
+		n = n->next;
+		tmp = *stack_a;
+		cont = 0;
+	}
 }

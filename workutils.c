@@ -6,16 +6,16 @@
 /*   By: jcardina <jcardina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/14 18:06:56 by jcardina          #+#    #+#             */
-/*   Updated: 2023/05/14 21:36:17 by jcardina         ###   ########.fr       */
+/*   Updated: 2023/06/12 18:21:50 by jcardina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_printlst(p_list **stack_a)
+void	ft_printlst(t_listx **stack_a)
 {
-	p_list	*tmp;
-	p_list	*save;
+	t_listx	*tmp;
+	t_listx	*save;
 	int i;
 
 	save = *stack_a;
@@ -29,10 +29,10 @@ void	ft_printlst(p_list **stack_a)
 	ft_printf(" / ");
 }
 
-void	index_init(p_list **stack_a)
+void	index_init(t_listx **stack_a)
 {
-	p_list	*tmp;
-	p_list	*save;
+	t_listx	*tmp;
+	t_listx	*save;
 	int i;
 
 	i = 0;
@@ -46,10 +46,10 @@ void	index_init(p_list **stack_a)
 	}
 }
 
-void	ft_printindex(p_list **stack_a)
+void	ft_printindex(t_listx **stack_a)
 {
-	p_list	*tmp;
-	p_list	*save;
+	t_listx	*tmp;
+	t_listx	*save;
 	int i;
 
 	save = *stack_a;

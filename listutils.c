@@ -6,17 +6,17 @@
 /*   By: jcardina <jcardina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/14 16:14:42 by jcardina          #+#    #+#             */
-/*   Updated: 2023/05/14 18:34:47 by jcardina         ###   ########.fr       */
+/*   Updated: 2023/06/12 18:19:06 by jcardina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-p_list	*ps_lstnew(int content)
+t_listx	*ps_lstnew(int content)
 {
-	p_list	*tmp;
+	t_listx	*tmp;
 
-	tmp = malloc(sizeof(p_list));
+	tmp = malloc(sizeof(t_listx));
 	if (tmp)
 	{
 		tmp->content = content;
@@ -25,9 +25,9 @@ p_list	*ps_lstnew(int content)
 	return (tmp);
 }
 
-int	ps_lstsize(p_list *lst)
+int	ps_lstsize(t_listx *lst)
 {
-	p_list	*tmp;
+	t_listx	*tmp;
 	int		i;
 
 	i = 0;
@@ -40,15 +40,15 @@ int	ps_lstsize(p_list *lst)
 	return (i);
 }
 
-void	ps_lstadd_front(p_list **lst, p_list *new)
+void	ps_lstadd_front(t_listx **lst, t_listx *new)
 {
 	new->next = *lst;
 	*lst = new;
 }
 
-void	ps_lstadd_back(p_list **lst, p_list *new)
+void	ps_lstadd_back(t_listx **lst, t_listx *new)
 {
-	p_list	*tmp;
+	t_listx	*tmp;
 
 	if (*lst)
 	{
@@ -59,9 +59,9 @@ void	ps_lstadd_back(p_list **lst, p_list *new)
 		*lst = new;
 }
 
-p_list	*ps_lstlast(p_list *lst)
+t_listx	*ps_lstlast(t_listx *lst)
 {
-	p_list	*tmp;
+	t_listx	*tmp;
 
 	tmp = lst;
 	while (tmp)

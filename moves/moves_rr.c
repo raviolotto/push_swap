@@ -6,16 +6,16 @@
 /*   By: jcardina <jcardina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/14 21:22:43 by jcardina          #+#    #+#             */
-/*   Updated: 2023/06/12 17:12:16 by jcardina         ###   ########.fr       */
+/*   Updated: 2023/06/12 18:19:06 by jcardina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	rra(p_list **stack_a)
+void	rra(t_listx **stack_a)
 {
-	p_list	*last;
-	p_list	*prev;
+	t_listx	*last;
+	t_listx	*prev;
 
 	last = *stack_a;
 	while(last->next != NULL)
@@ -29,10 +29,10 @@ void	rra(p_list **stack_a)
 	write(1, "rra", 3);
 }
 
-void	rrb(p_list **stack_b)
+void	rrb(t_listx **stack_b)
 {
-	p_list	*last;
-	p_list	*prev;
+	t_listx	*last;
+	t_listx	*prev;
 
 	last = *stack_b;
 	while(last->next != NULL)
@@ -46,10 +46,10 @@ void	rrb(p_list **stack_b)
 	write(1, "rrb", 3);
 }
 
-void	rrr(p_list **stack_a, p_list **stack_b)
+void	rrr(t_listx **stack_a, t_listx **stack_b)
 {
-	p_list	*last;
-	p_list	*prev;
+	t_listx	*last;
+	t_listx	*prev;
 
 	last = *stack_a;
 	while(last->next != NULL)

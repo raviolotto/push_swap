@@ -6,15 +6,15 @@
 /*   By: jcardina <jcardina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 17:50:06 by amema             #+#    #+#             */
-/*   Updated: 2023/06/12 17:12:20 by jcardina         ###   ########.fr       */
+/*   Updated: 2023/06/12 18:19:06 by jcardina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void    sa(p_list **stack_a)
+void    sa(t_listx **stack_a)
 {
-    p_list  *tmp;
+    t_listx  *tmp;
 
     tmp = *stack_a;
     *stack_a = (*stack_a)->next;
@@ -22,9 +22,9 @@ void    sa(p_list **stack_a)
     (*stack_a)->next = tmp;
 }
 
-void    sb(p_list **stack_b)
+void    sb(t_listx **stack_b)
 {
-    p_list  *tmp;
+    t_listx  *tmp;
 
     tmp = *stack_b;
     *stack_b = (*stack_b)->next;
@@ -32,9 +32,9 @@ void    sb(p_list **stack_b)
     (*stack_b)->next = tmp;
 }
 
-void    ss(p_list **stack_b, p_list **stack_a)
+void    ss(t_listx **stack_b, t_listx **stack_a)
 {
-    p_list  *tmp;
+    t_listx  *tmp;
 
     tmp = *stack_a;
     *stack_a = (*stack_a)->next;

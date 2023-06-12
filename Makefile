@@ -6,7 +6,7 @@
 #    By: jcardina <jcardina@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/12 15:52:29 by jcardina          #+#    #+#              #
-#    Updated: 2023/06/12 17:10:35 by jcardina         ###   ########.fr        #
+#    Updated: 2023/06/12 18:16:39 by jcardina         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,6 +20,7 @@ SRC = \
 	listutils.c\
 	push_swap.c \
 	workutils.c \
+	init_b.c \
 	moves/moves_r.c \
 	moves/moves_rr.c \
 	moves/moves_p.c \
