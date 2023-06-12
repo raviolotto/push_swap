@@ -6,7 +6,7 @@
 /*   By: jcardina <jcardina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 14:10:51 by jcardina          #+#    #+#             */
-/*   Updated: 2023/06/12 18:36:24 by jcardina         ###   ########.fr       */
+/*   Updated: 2023/06/12 19:15:35 by jcardina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,9 +52,11 @@ int	main(int ac, char **av)
 	if (ac < 2)
 		return (0);
 	list_init(ac, av, &stack_a);
-	ft_mid(&stack_a, &mem);
-	ft_printf("%d", (mem.mid));
-	ft_printf("%d", (mem.min));
-	ft_printf("%d", (mem.max));
+	init_b(&stack_a, &stack_b, &mem);
+	// ft_printf("%d", (mem.mid));
+	// ft_printf("%d", (mem.min));
+	// ft_printf("%d", (mem.max));
+	ft_printlst(&stack_a);
+	ft_printlst(&stack_b);
 	return (0);
 }
