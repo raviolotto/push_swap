@@ -6,7 +6,7 @@
 /*   By: jcardina <jcardina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 14:10:51 by jcardina          #+#    #+#             */
-/*   Updated: 2023/06/14 16:07:25 by jcardina         ###   ########.fr       */
+/*   Updated: 2023/06/14 16:45:44 by jcardina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,8 @@ void	list_init(int ac, char **av, t_listx **stack_a)
 
 void	inst_init(t_inst *inst)
 {
-	inst ->a_index = 2147483647;
-	inst ->b_index = 2147483647;
+	inst ->a_index = 21474836;
+	inst ->b_index = 21474836;
 }
 
 int	main(int ac, char **av)
@@ -64,8 +64,8 @@ int	main(int ac, char **av)
 	init_b(&stack_a, &stack_b, &mem);
 	algoritm(&stack_a, &stack_b, &inst);
 	ft_printlst(&stack_a);
-	ft_printlst(&stack_b);
-	ft_printindex(&stack_a);
-	ft_printindex(&stack_b);
+	//ft_printlst(&stack_b);
+	//ft_printindex(&stack_a);
+	//ft_printindex(&stack_b);
 	return (0);
 }

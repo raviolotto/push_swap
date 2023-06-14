@@ -6,7 +6,7 @@
 /*   By: jcardina <jcardina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 12:04:34 by jcardina          #+#    #+#             */
-/*   Updated: 2023/06/14 16:01:48 by jcardina         ###   ########.fr       */
+/*   Updated: 2023/06/14 16:50:01 by jcardina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,20 +17,25 @@ void	read_inst(t_listx  **stack_a, t_listx **stack_b, t_inst *inst)
 	while (inst ->a_index > 0 && inst ->b_index > 0)
 	{
 		rr(stack_a, stack_b);
+		//ft_printf("%d", inst ->a_index);
 		inst ->a_index--;
 		inst ->b_index--;
+		ft_printindex(stack_a);
 	}
 	while (inst ->a_index > 0)
 	{
 		ra(stack_a);
 		inst ->a_index--;
+		ft_printindex(stack_a);
 	}
 	while (inst ->b_index > 0)
 	{
 		rb(stack_b);
 		inst ->b_index--;
+		ft_printindex(stack_a);
 	}
 	pa(stack_a, stack_b);
+	ft_printindex(stack_a);
 	return;
 }
 
@@ -52,6 +57,7 @@ void	best_move(t_listx **stack_a, t_listx **stack_b, t_inst	*inst)
 	while (tmp)
 	{
 		count = spot_finder(stack_a, stack_b);
+		//ft_printf("%d\n", count);
 		if ((count + tmp ->index) < (inst ->a_index + inst ->b_index))
 		{
 			inst ->a_index = count;
