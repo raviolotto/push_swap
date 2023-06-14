@@ -6,7 +6,7 @@
 /*   By: jcardina <jcardina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 12:29:13 by jcardina          #+#    #+#             */
-/*   Updated: 2023/06/12 19:58:53 by jcardina         ###   ########.fr       */
+/*   Updated: 2023/06/14 15:58:11 by jcardina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,12 @@ typedef struct s_memo
 	int	max;
 }	t_memo;
 
+typedef struct s_inst
+{
+	int	a_index;
+	int	b_index;
+}	t_inst;
+
 //le funzione prese da libft
 t_listx	*ps_lstnew(int content);
 int		ps_lstsize(t_listx *lst);
@@ -47,12 +53,17 @@ void	ft_mid(t_listx **stack_a, t_memo *mem);
 void	ft_min_max(t_listx **stack_a, t_memo *mem);
 void	init_b(t_listx **stack_a, t_listx **stack_b, t_memo *mem);
 void	order_a(t_listx **stack_a, t_memo *mem);
+// algoritmo
+void	best_move(t_listx **stack_a, t_listx **stack_b, t_inst *inst);
+int		spot_finder(t_listx **stack_a, t_listx **stack_b);
+void	algoritm(t_listx **stack_a, t_listx **stack_b, t_inst	*inst);
 //stampa valori di controllo (non servono per la versione finale)
 void	ft_printindex(t_listx **stack_a);
 void	ft_printlst(t_listx **stack_a);
 //mosse
 void	ra(t_listx **stack_a);
 void	rb(t_listx **stack_b);
+void	rr(t_listx **stack_a, t_listx **stack_b);
 void	rra(t_listx **stack_a);
 void	rrb(t_listx **stack_b);
 void	rrr(t_listx **stack_a, t_listx **stack_b);

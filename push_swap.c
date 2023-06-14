@@ -6,7 +6,7 @@
 /*   By: jcardina <jcardina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 14:10:51 by jcardina          #+#    #+#             */
-/*   Updated: 2023/06/12 20:01:25 by jcardina         ###   ########.fr       */
+/*   Updated: 2023/06/14 16:07:25 by jcardina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,16 @@ void	list_init(int ac, char **av, t_listx **stack_a)
 		while (number_matrix[row_nb] != NULL)
 		row_nb++;
 		fill_stack(number_matrix, stack_a, row_nb, 0);
+		free(number_matrix);
 	}
 	else
 		fill_stack(av, stack_a, ac, 1);
+}
+
+void	inst_init(t_inst *inst)
+{
+	inst ->a_index = 2147483647;
+	inst ->b_index = 2147483647;
 }
 
 int	main(int ac, char **av)
@@ -46,14 +53,19 @@ int	main(int ac, char **av)
 	t_listx	*stack_a;
 	t_listx	*stack_b;
 	t_memo	mem;
+	t_inst	inst;
 
 	stack_a = NULL;
 	stack_b = NULL;
+	inst_init(&inst);
 	if (ac < 2)
 		return (0);
 	list_init(ac, av, &stack_a);
 	init_b(&stack_a, &stack_b, &mem);
+	algoritm(&stack_a, &stack_b, &inst);
 	ft_printlst(&stack_a);
 	ft_printlst(&stack_b);
+	ft_printindex(&stack_a);
+	ft_printindex(&stack_b);
 	return (0);
 }
