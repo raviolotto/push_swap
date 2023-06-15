@@ -6,14 +6,15 @@
 /*   By: jcardina <jcardina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 12:04:34 by jcardina          #+#    #+#             */
-/*   Updated: 2023/06/15 17:31:01 by jcardina         ###   ########.fr       */
+/*   Updated: 2023/06/15 18:43:31 by jcardina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	read_inst(t_listx  **stack_a, t_listx **stack_b, t_inst *inst)
+void	read_inst(t_listx **stack_a, t_listx **stack_b, t_inst *inst)
 {
+	//questo va bene nel caso tiger
 	while (inst ->a_index > 0 && inst ->b_index > 0)
 	{
 		rr(stack_a, stack_b);
@@ -32,7 +33,7 @@ void	read_inst(t_listx  **stack_a, t_listx **stack_b, t_inst *inst)
 	}
 	pa(stack_a, stack_b);
 	inst_init(inst);
-	return;
+	return ;
 }
 
 void	algoritm(t_listx **stack_a, t_listx **stack_b, t_inst	*inst)
@@ -40,7 +41,7 @@ void	algoritm(t_listx **stack_a, t_listx **stack_b, t_inst	*inst)
 	while (ps_lstsize(*stack_b) != 0)
 	{
 		best_move(stack_a, stack_b, inst);
-		read_inst(stack_a, stack_b,inst);
+		read_inst(stack_a, stack_b, inst);
 	}
 }
 
@@ -48,25 +49,40 @@ void	best_move(t_listx **stack_a, t_listx **stack_b, t_inst	*inst)
 {
 	t_listx	*tmp;
 	int		count;
+	int		moves;
 
 	tmp = *stack_b;
 	while (tmp)
 	{
 		count = spot_finder(stack_a, &tmp);
+		moves = moves_counter(count, tmp ->index, stack_a, stack_a);
 		if ((count + tmp ->index) < (inst ->a_index + inst ->b_index))
 		{
-			// ft_printf("count = %d  ", count);
-			// ft_printf("b index = %d  ", tmp ->index);
-			// ft_printf("count + b index = %d  ", count + tmp ->index);
 			inst ->a_index = count;
 			inst ->b_index = tmp ->index;
 		}
-		//write(1, "o", 1);
-		// ft_printf("count = %d  ", count);
-		// ft_printf("b index = %d  ", tmp ->index);
-		// ft_printf("count + b index = %d  ", count + tmp ->index);
 		tmp = tmp ->next;
 	}
+}
+
+int	moves_counter(int ia, int ib, t_listx **stack_a, t_list **stack_b)
+{
+	int	ret;
+	int	size_a;
+	int	size_b;
+
+	size_a = ps_lstsize(*stack_a);
+	size_b = ps_lstsize(*stack_b);
+	ret = 0;
+	if((ia <= (size_a / 2)) && (ib <= (size_b / 2)))//tiger
+		ret = ia + ib;
+	else if ((ia <= (size_a / 2)) && (ib > (size_b / 2)))//cobra
+		ret = ia + (size_b - ib + 1);
+	else if ((ia > (size_a / 2)) && (ib <= (size_b / 2)))//labrador
+		ret = (size_a - ia + 1) + ib;
+	else if ((ia > (size_a / 2)) && (ib > (size_b / 2)))//kyte
+		ret = (size_a - ia + 1) + (size_b - ib + 1);
+	return (ret);
 }
 
 int	spot_finder(t_listx **stack_a, t_listx **stack_b)
@@ -83,7 +99,7 @@ int	spot_finder(t_listx **stack_a, t_listx **stack_b)
 			return (tmp ->index);
 		if (tmp2 ->content > tmp ->content
 			&& tmp2 ->content < ((tmp ->next)->content))
-				return (tmp ->index + 1);
+			return (tmp ->index + 1);
 		tmp = tmp ->next;
 	}
 	return (-1);
