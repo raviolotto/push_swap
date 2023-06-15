@@ -6,7 +6,7 @@
 /*   By: jcardina <jcardina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/14 18:06:56 by jcardina          #+#    #+#             */
-/*   Updated: 2023/06/14 16:45:03 by jcardina         ###   ########.fr       */
+/*   Updated: 2023/06/15 16:11:27 by jcardina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	index_init(t_listx **stack_a)
 	t_listx	*save;
 	int		i;
 
-	i = 1;
+	i = 0;
 	save = *stack_a;
 	while (save)
 	{

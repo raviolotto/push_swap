@@ -6,7 +6,7 @@
 /*   By: jcardina <jcardina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 12:29:13 by jcardina          #+#    #+#             */
-/*   Updated: 2023/06/14 15:58:11 by jcardina         ###   ########.fr       */
+/*   Updated: 2023/06/15 16:20:23 by jcardina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ t_listx	*ps_lstlast(t_listx *lst);
 void	list_init(int ac, char **av, t_listx **stack_a);
 void	fill_stack(char **av, t_listx **stack_a, int row_nb, int i);
 void	index_init(t_listx **stack_a);
+void	inst_init(t_inst *inst);
 //pushare in b
 void	ft_mid(t_listx **stack_a, t_memo *mem);
 void	ft_min_max(t_listx **stack_a, t_memo *mem);
