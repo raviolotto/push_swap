@@ -6,7 +6,7 @@
 /*   By: jcardina <jcardina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 12:04:34 by jcardina          #+#    #+#             */
-/*   Updated: 2023/06/15 18:43:31 by jcardina         ###   ########.fr       */
+/*   Updated: 2023/06/15 18:48:22 by jcardina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,8 +50,10 @@ void	best_move(t_listx **stack_a, t_listx **stack_b, t_inst	*inst)
 	t_listx	*tmp;
 	int		count;
 	int		moves;
+	int		moves_mem;
 
 	tmp = *stack_b;
+	moves_mem = 21474836;
 	while (tmp)
 	{
 		count = spot_finder(stack_a, &tmp);
@@ -60,8 +62,10 @@ void	best_move(t_listx **stack_a, t_listx **stack_b, t_inst	*inst)
 		{
 			inst ->a_index = count;
 			inst ->b_index = tmp ->index;
+			moves_mem = moves;
 		}
 		tmp = tmp ->next;
+
 	}
 }
 
