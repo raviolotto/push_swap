@@ -6,7 +6,7 @@
 /*   By: jcardina <jcardina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 12:04:34 by jcardina          #+#    #+#             */
-/*   Updated: 2023/06/15 18:48:22 by jcardina         ###   ########.fr       */
+/*   Updated: 2023/06/15 18:58:31 by jcardina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,7 @@ void	best_move(t_listx **stack_a, t_listx **stack_b, t_inst	*inst)
 			inst ->a_index = count;
 			inst ->b_index = tmp ->index;
 			moves_mem = moves;
+			inst ->cases = case_finder(count, tmp ->index, stack_a, stack_a);
 		}
 		tmp = tmp ->next;
 
@@ -87,6 +88,24 @@ int	moves_counter(int ia, int ib, t_listx **stack_a, t_list **stack_b)
 	else if ((ia > (size_a / 2)) && (ib > (size_b / 2)))//kyte
 		ret = (size_a - ia + 1) + (size_b - ib + 1);
 	return (ret);
+}
+
+int	case_finder(int ia, int ib, t_listx **stack_a, t_list **stack_b)
+{
+	int	size_a;
+	int	size_b;
+
+	size_a = ps_lstsize(*stack_a);
+	size_b = ps_lstsize(*stack_b);
+	if((ia <= (size_a / 2)) && (ib <= (size_b / 2)))//tiger
+		return (1);
+	else if ((ia <= (size_a / 2)) && (ib > (size_b / 2)))//cobra
+		return (2);
+	else if ((ia > (size_a / 2)) && (ib <= (size_b / 2)))//labrador
+		return (3);
+	else if ((ia > (size_a / 2)) && (ib > (size_b / 2)))//kyte
+		return (4);
+	return (-1);
 }
 
 int	spot_finder(t_listx **stack_a, t_listx **stack_b)

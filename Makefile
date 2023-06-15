@@ -6,7 +6,7 @@
 #    By: jcardina <jcardina@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/12 15:52:29 by jcardina          #+#    #+#              #
-#    Updated: 2023/06/14 12:05:38 by jcardina         ###   ########.fr        #
+#    Updated: 2023/06/15 19:00:31 by jcardina         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,6 +26,7 @@ SRC = \
 	moves/moves_p.c \
 	moves/moves_s.c \
 	algoritm/best_move.c \
+	algoritm/inst_reader.c \
 
 OBJ = $(SRC:%.c=%.o)
 

@@ -6,7 +6,7 @@
 /*   By: jcardina <jcardina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 12:29:13 by jcardina          #+#    #+#             */
-/*   Updated: 2023/06/15 16:20:23 by jcardina         ###   ########.fr       */
+/*   Updated: 2023/06/15 18:57:29 by jcardina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ typedef struct s_inst
 {
 	int	a_index;
 	int	b_index;
+	int	cases;
 }	t_inst;
 
 //le funzione prese da libft
@@ -58,6 +59,8 @@ void	order_a(t_listx **stack_a, t_memo *mem);
 void	best_move(t_listx **stack_a, t_listx **stack_b, t_inst *inst);
 int		spot_finder(t_listx **stack_a, t_listx **stack_b);
 void	algoritm(t_listx **stack_a, t_listx **stack_b, t_inst	*inst);
+int		moves_counter(int ia, int ib, t_listx **stack_a, t_list **stack_b);
+int		case_finder(int ia, int ib, t_listx **stack_a, t_list **stack_b);
 //stampa valori di controllo (non servono per la versione finale)
 void	ft_printindex(t_listx **stack_a);
 void	ft_printlst(t_listx **stack_a);
