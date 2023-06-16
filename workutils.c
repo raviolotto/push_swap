@@ -6,7 +6,7 @@
 /*   By: jcardina <jcardina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/14 18:06:56 by jcardina          #+#    #+#             */
-/*   Updated: 2023/06/15 16:11:27 by jcardina         ###   ########.fr       */
+/*   Updated: 2023/06/16 19:44:56 by jcardina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,5 +59,32 @@ void	ft_printindex(t_listx **stack_a)
 		i = save->index;
 		ft_printf("%d ", i);
 		save = tmp;
+	}
+}
+
+void	final_rotate(t_listx **stack_a, t_memo *m)
+{
+	t_listx	*tmp;
+	int		i;
+
+	tmp = *stack_a;
+	while (tmp)
+	{
+		if (tmp ->content == m ->min)
+		{
+			if (tmp ->index > (ps_lstsize(*stack_a) / 2))
+			{
+				i = tmp ->index;
+				while (i++ < ps_lstsize(*stack_a))
+					rra(stack_a);
+			}
+			if (tmp ->index <= (ps_lstsize(*stack_a) / 2))
+			{
+				i = tmp ->index;
+				while (i-- > 0)
+					ra(stack_a);
+			}
+		}
+		tmp = tmp ->next;
 	}
 }

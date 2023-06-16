@@ -6,19 +6,20 @@
 /*   By: jcardina <jcardina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 12:04:34 by jcardina          #+#    #+#             */
-/*   Updated: 2023/06/16 18:43:57 by jcardina         ###   ########.fr       */
+/*   Updated: 2023/06/16 19:58:59 by jcardina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	algoritm(t_listx **stack_a, t_listx **stack_b, t_inst	*inst)
+void	algoritm(t_listx **stack_a, t_listx **stack_b, t_inst *inst, t_memo *m)
 {
 	while (ps_lstsize(*stack_b) != 0)
 	{
 		best_move(stack_a, stack_b, inst);
 		inst_reader(stack_a, stack_b, inst);
 	}
+	final_rotate(stack_a, m);
 }
 
 void	best_move(t_listx **stack_a, t_listx **stack_b, t_inst	*inst)
@@ -42,7 +43,6 @@ void	best_move(t_listx **stack_a, t_listx **stack_b, t_inst	*inst)
 			moves_mem = moves;
 		}
 		tmp = tmp ->next;
-
 	}
 }
 
@@ -55,13 +55,13 @@ int	moves_counter(int ia, int ib, t_listx **stack_a, t_listx **stack_b)
 	size_a = ps_lstsize(*stack_a);
 	size_b = ps_lstsize(*stack_b);
 	ret = 0;
-	if((ia <= (size_a / 2)) && (ib <= (size_b / 2)))//tiger
+	if ((ia <= (size_a / 2)) && (ib <= (size_b / 2)))
 		ret = ia + ib;
-	else if ((ia <= (size_a / 2)) && (ib > (size_b / 2)))//cobra
+	else if ((ia <= (size_a / 2)) && (ib > (size_b / 2)))
 		ret = ia + (size_b - ib + 1);
-	else if ((ia > (size_a / 2)) && (ib <= (size_b / 2)))//labrador
+	else if ((ia > (size_a / 2)) && (ib <= (size_b / 2)))
 		ret = (size_a - ia + 1) + ib;
-	else if ((ia > (size_a / 2)) && (ib > (size_b / 2)))//kyte
+	else if ((ia > (size_a / 2)) && (ib > (size_b / 2)))
 		ret = (size_a - ia + 1) + (size_b - ib + 1);
 	return (ret);
 }
@@ -73,13 +73,13 @@ int	case_finder(int ia, int ib, t_listx **stack_a, t_listx **stack_b)
 
 	size_a = ps_lstsize(*stack_a);
 	size_b = ps_lstsize(*stack_b);
-	if((ia <= (size_a / 2)) && (ib <= (size_b / 2)))//tiger
+	if ((ia <= (size_a / 2)) && (ib <= (size_b / 2)))
 		return (1);
-	else if ((ia <= (size_a / 2)) && (ib > (size_b / 2)))//cobra
+	else if ((ia <= (size_a / 2)) && (ib > (size_b / 2)))
 		return (2);
-	else if ((ia > (size_a / 2)) && (ib <= (size_b / 2)))//labrador
+	else if ((ia > (size_a / 2)) && (ib <= (size_b / 2)))
 		return (3);
-	else if ((ia > (size_a / 2)) && (ib > (size_b / 2)))//kyte
+	else if ((ia > (size_a / 2)) && (ib > (size_b / 2)))
 		return (4);
 	return (-1);
 }

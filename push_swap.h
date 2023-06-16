@@ -6,7 +6,7 @@
 /*   By: jcardina <jcardina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 12:29:13 by jcardina          #+#    #+#             */
-/*   Updated: 2023/06/16 18:50:00 by jcardina         ###   ########.fr       */
+/*   Updated: 2023/06/16 19:54:02 by jcardina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,9 +58,10 @@ void	order_a(t_listx **stack_a, t_memo *mem);
 // algoritmo
 void	best_move(t_listx **stack_a, t_listx **stack_b, t_inst *inst);
 int		spot_finder(t_listx **stack_a, t_listx **stack_b);
-void	algoritm(t_listx **stack_a, t_listx **stack_b, t_inst	*inst);
+void	algoritm(t_listx **stack_a, t_listx **stack_b, t_inst *inst, t_memo *m);
 int		moves_counter(int ia, int ib, t_listx **stack_a, t_listx **stack_b);
 int		case_finder(int ia, int ib, t_listx **stack_a, t_listx **stack_b);
+void	final_rotate(t_listx **stack_a, t_memo *m);
 // inst reader
 void	inst_reader(t_listx **stack_a, t_listx **stack_b, t_inst *inst);
 void	tiger(t_listx **stack_a, t_listx **stack_b, t_inst *inst);
@@ -86,9 +87,7 @@ void	ss(t_listx **stack_b, t_listx **stack_a);
 #endif
 
 /* cose che mi mancano da fare
-1	implementare il rotate finale
 2	il caso del 5
-3	vedere se conviene fare ra
 4	fare il ceck dellímput
 5	i leak dio bono
 */

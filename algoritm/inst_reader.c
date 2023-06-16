@@ -6,7 +6,7 @@
 /*   By: jcardina <jcardina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/15 18:59:32 by jcardina          #+#    #+#             */
-/*   Updated: 2023/06/16 18:43:09 by jcardina         ###   ########.fr       */
+/*   Updated: 2023/06/16 18:59:26 by jcardina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,13 @@
 
 void	inst_reader(t_listx **stack_a, t_listx **stack_b, t_inst *inst)
 {
-	if(inst ->cases == 1)
+	if (inst ->cases == 1)
 		tiger(stack_a, stack_b, inst);
-	else if(inst ->cases == 2)
+	else if (inst ->cases == 2)
 		cobra(stack_a, stack_b, inst);
-	else if(inst ->cases == 3)
+	else if (inst ->cases == 3)
 		labrador(stack_a, stack_b, inst);
-	else if(inst ->cases == 4)
+	else if (inst ->cases == 4)
 		kyte(stack_a, stack_b, inst);
 	return ;
 }
@@ -86,7 +86,8 @@ void	labrador(t_listx **stack_a, t_listx **stack_b, t_inst *inst)
 
 void	kyte(t_listx **stack_a, t_listx **stack_b, t_inst *inst)
 {
-	while (inst ->a_index < ps_lstsize(*stack_a) && inst ->b_index < ps_lstsize(*stack_b))
+	while (inst ->a_index < ps_lstsize(*stack_a)
+		&& inst ->b_index < ps_lstsize(*stack_b))
 	{
 		rrr(stack_a, stack_b);
 		inst ->a_index++;
