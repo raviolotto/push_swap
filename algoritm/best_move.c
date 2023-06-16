@@ -6,42 +6,43 @@
 /*   By: jcardina <jcardina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 12:04:34 by jcardina          #+#    #+#             */
-/*   Updated: 2023/06/15 18:58:31 by jcardina         ###   ########.fr       */
+/*   Updated: 2023/06/16 18:11:48 by jcardina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	read_inst(t_listx **stack_a, t_listx **stack_b, t_inst *inst)
-{
-	//questo va bene nel caso tiger
-	while (inst ->a_index > 0 && inst ->b_index > 0)
-	{
-		rr(stack_a, stack_b);
-		inst ->a_index--;
-		inst ->b_index--;
-	}
-	while (inst ->a_index > 0)
-	{
-		ra(stack_a);
-		inst ->a_index--;
-	}
-	while (inst ->b_index > 0)
-	{
-		rb(stack_b);
-		inst ->b_index--;
-	}
-	pa(stack_a, stack_b);
-	inst_init(inst);
-	return ;
-}
+// void	read_inst(t_listx **stack_a, t_listx **stack_b, t_inst *inst)
+// {
+// 	//questo va bene nel caso tiger
+// 	while (inst ->a_index > 0 && inst ->b_index > 0)
+// 	{
+// 		rr(stack_a, stack_b);
+// 		inst ->a_index--;
+// 		inst ->b_index--;
+// 	}
+// 	while (inst ->a_index > 0)
+// 	{
+// 		ra(stack_a);
+// 		inst ->a_index--;
+// 	}
+// 	while (inst ->b_index > 0)
+// 	{
+// 		rb(stack_b);
+// 		inst ->b_index--;
+// 	}
+// 	pa(stack_a, stack_b);
+// 	inst_init(inst);
+// 	return ;
+// }
 
 void	algoritm(t_listx **stack_a, t_listx **stack_b, t_inst	*inst)
 {
 	while (ps_lstsize(*stack_b) != 0)
 	{
 		best_move(stack_a, stack_b, inst);
-		read_inst(stack_a, stack_b, inst);
+		inst_reader(stack_a, stack_b, inst);
+		//read_inst(stack_a, stack_b, inst);
 	}
 }
 
@@ -57,20 +58,21 @@ void	best_move(t_listx **stack_a, t_listx **stack_b, t_inst	*inst)
 	while (tmp)
 	{
 		count = spot_finder(stack_a, &tmp);
-		moves = moves_counter(count, tmp ->index, stack_a, stack_a);
-		if ((count + tmp ->index) < (inst ->a_index + inst ->b_index))
+		moves = moves_counter(count, tmp ->index, stack_a, stack_b);
+		//if ((count + tmp ->index) < (inst ->a_index + inst ->b_index))
+		if (moves < moves_mem)
 		{
 			inst ->a_index = count;
 			inst ->b_index = tmp ->index;
+			inst ->cases = case_finder(count, tmp ->index, stack_a, stack_b);
 			moves_mem = moves;
-			inst ->cases = case_finder(count, tmp ->index, stack_a, stack_a);
 		}
 		tmp = tmp ->next;
 
 	}
 }
 
-int	moves_counter(int ia, int ib, t_listx **stack_a, t_list **stack_b)
+int	moves_counter(int ia, int ib, t_listx **stack_a, t_listx **stack_b)
 {
 	int	ret;
 	int	size_a;
@@ -90,7 +92,7 @@ int	moves_counter(int ia, int ib, t_listx **stack_a, t_list **stack_b)
 	return (ret);
 }
 
-int	case_finder(int ia, int ib, t_listx **stack_a, t_list **stack_b)
+int	case_finder(int ia, int ib, t_listx **stack_a, t_listx **stack_b)
 {
 	int	size_a;
 	int	size_b;
