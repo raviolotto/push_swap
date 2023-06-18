@@ -6,7 +6,7 @@
 /*   By: jcardina <jcardina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 12:29:13 by jcardina          #+#    #+#             */
-/*   Updated: 2023/06/16 19:54:02 by jcardina         ###   ########.fr       */
+/*   Updated: 2023/06/18 20:44:27 by jcardina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,6 +88,7 @@ void	ss(t_listx **stack_b, t_listx **stack_a);
 
 /* cose che mi mancano da fare
 2	il caso del 5
+3	il caso del 2
 4	fare il ceck dellímput
 5	i leak dio bono
 */

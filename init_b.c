@@ -6,7 +6,7 @@
 /*   By: jcardina <jcardina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/12 17:14:27 by jcardina          #+#    #+#             */
-/*   Updated: 2023/06/18 20:10:46 by jcardina         ###   ########.fr       */
+/*   Updated: 2023/06/18 20:59:23 by jcardina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,23 +61,27 @@ void	init_b(t_listx **stack_a, t_listx **stack_b, t_memo *mem)
 	t_listx	*tmp;
 
 	ft_mid(stack_a, mem);
-	while (ps_lstsize(*stack_a) != 3)
+	while (ps_lstsize(*stack_a) != 3 && ps_lstsize(*stack_a) != 2)
 	{
 		tmp = *stack_a;
 		if ((tmp ->content < mem ->mid) && (tmp -> content != mem ->min))
-		{
 			pb(stack_a, stack_b);
-			//rb(stack_b);
-		}
 		else if ((tmp ->content > mem ->mid) && (tmp -> content != mem ->max))
 		{
 			pb(stack_a, stack_b);
 			rb(stack_b);
 		}
-		else if (tmp ->content == mem ->min || tmp ->content == mem ->mid || tmp ->content == mem -> max)
+		else if (tmp ->content == mem ->min || tmp ->content == mem ->mid
+			|| tmp ->content == mem -> max)
 			ra(stack_a);
 	}
-	order_a(stack_a, mem);
+	if(ps_lstsize(*stack_a) == 2)
+	{
+		if((*stack_a) ->content == mem ->max)
+			ra(stack_a);
+	}
+	else
+		order_a(stack_a, mem);
 }
 
 void	order_a(t_listx **s_a, t_memo *mem)
