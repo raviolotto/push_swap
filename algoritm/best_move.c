@@ -6,7 +6,7 @@
 /*   By: jcardina <jcardina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 12:04:34 by jcardina          #+#    #+#             */
-/*   Updated: 2023/06/16 19:58:59 by jcardina         ###   ########.fr       */
+/*   Updated: 2023/06/18 19:36:02 by jcardina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,11 +58,11 @@ int	moves_counter(int ia, int ib, t_listx **stack_a, t_listx **stack_b)
 	if ((ia <= (size_a / 2)) && (ib <= (size_b / 2)))
 		ret = ia + ib;
 	else if ((ia <= (size_a / 2)) && (ib > (size_b / 2)))
-		ret = ia + (size_b - ib + 1);
+		ret = ia + (size_b - ib);
 	else if ((ia > (size_a / 2)) && (ib <= (size_b / 2)))
-		ret = (size_a - ia + 1) + ib;
+		ret = (size_a - ia) + ib;
 	else if ((ia > (size_a / 2)) && (ib > (size_b / 2)))
-		ret = (size_a - ia + 1) + (size_b - ib + 1);
+		ret = (size_a - ia) + (size_b - ib);
 	return (ret);
 }
 
@@ -95,7 +95,7 @@ int	spot_finder(t_listx **stack_a, t_listx **stack_b)
 	{
 		if (tmp2 ->content < tmp ->content
 			&& tmp2 ->content > ((ps_lstlast(*stack_a))->content))
-			return (tmp ->index);
+			return (0);
 		if (tmp2 ->content > tmp ->content
 			&& tmp2 ->content < ((tmp ->next)->content))
 			return (tmp ->index + 1);
