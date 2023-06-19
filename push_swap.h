@@ -6,7 +6,7 @@
 /*   By: jcardina <jcardina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 12:29:13 by jcardina          #+#    #+#             */
-/*   Updated: 2023/06/18 20:44:27 by jcardina         ###   ########.fr       */
+/*   Updated: 2023/06/19 15:56:43 by jcardina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,9 @@ void	inst_init(t_inst *inst);
 void	ft_mid(t_listx **stack_a, t_memo *mem);
 void	ft_min_max(t_listx **stack_a, t_memo *mem);
 void	init_b(t_listx **stack_a, t_listx **stack_b, t_memo *mem);
-void	order_a(t_listx **stack_a, t_memo *mem);
+void	order_3(t_listx **stack_a, t_memo *mem);
+//sortare 5
+void	order_5(t_listx **stack_a, t_listx **satck_b, t_memo *mem);
 // algoritmo
 void	best_move(t_listx **stack_a, t_listx **stack_b, t_inst *inst);
 int		spot_finder(t_listx **stack_a, t_listx **stack_b);
@@ -87,8 +89,6 @@ void	ss(t_listx **stack_b, t_listx **stack_a);
 #endif
 
 /* cose che mi mancano da fare
-2	il caso del 5
-3	il caso del 2
-4	fare il ceck dellímput
+4	fare il ceck dell'imput
 5	i leak dio bono
 */
