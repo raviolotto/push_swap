@@ -6,7 +6,7 @@
 #    By: jcardina <jcardina@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/12 15:52:29 by jcardina          #+#    #+#              #
-#    Updated: 2023/06/19 14:20:15 by jcardina         ###   ########.fr        #
+#    Updated: 2023/06/19 16:34:15 by jcardina         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ SRC = \
 	push_swap.c \
 	workutils.c \
 	init_b.c \
-	order_5.c \
+	ok_input.c \
 	moves/moves_r.c \
 	moves/moves_rr.c \
 	moves/moves_p.c \

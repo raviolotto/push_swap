@@ -6,7 +6,7 @@
 /*   By: jcardina <jcardina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/12 17:14:27 by jcardina          #+#    #+#             */
-/*   Updated: 2023/06/19 15:14:51 by jcardina         ###   ########.fr       */
+/*   Updated: 2023/06/19 16:05:08 by jcardina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,4 +114,31 @@ void	order_3(t_listx **s_a, t_memo *mem)
 			rra(s_a);
 		}
 	}
+}
+
+void	order_5(t_listx **stack_a, t_listx **stack_b, t_memo *mem)
+{
+	int i;
+
+	i = 0;
+	pb(stack_a, stack_b);
+	pb(stack_a, stack_b);
+	ft_mid(stack_a, mem);
+	order_3(stack_a, mem);
+	while(i++ < 2)
+	{
+		if ((*stack_b) ->content > mem ->max)
+		{
+			pa(stack_a, stack_b);
+			ra(stack_a);
+			ft_mid(stack_a, mem);
+		}
+		else if((*stack_b) ->content <= mem ->min)
+		{
+			pa(stack_a, stack_b);
+			ft_mid(stack_a, mem);
+		}
+		rb(stack_b);
+	}
+	ft_mid(stack_a, mem);
 }
