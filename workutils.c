@@ -3,15 +3,25 @@
 /*                                                        :::      ::::::::   */
 /*   workutils.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jcardina <jcardina@student.42.fr>          +#+  +:+       +#+        */
+/*   By: amema <amema@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/14 18:06:56 by jcardina          #+#    #+#             */
-/*   Updated: 2023/06/16 19:44:56 by jcardina         ###   ########.fr       */
+/*   Updated: 2023/06/20 15:39:44 by amema            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+int	stack_sorted(t_listx *stack)
+{
+    while (stack && stack->next)
+    {
+        if (stack->content > stack->next->content)
+            return 0; // non ordinari
+        stack = stack->next;
+    }
+    return 1; // ordinati
+}
 void	ft_printlst(t_listx **stack_a)
 {
 	t_listx	*tmp;

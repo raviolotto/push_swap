@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_b.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jcardina <jcardina@student.42.fr>          +#+  +:+       +#+        */
+/*   By: amema <amema@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/12 17:14:27 by jcardina          #+#    #+#             */
-/*   Updated: 2023/06/19 16:05:08 by jcardina         ###   ########.fr       */
+/*   Updated: 2023/06/20 15:43:55 by amema            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,6 +121,8 @@ void	order_5(t_listx **stack_a, t_listx **stack_b, t_memo *mem)
 	int i;
 
 	i = 0;
+	if(stack_sorted(*stack_a))
+		return;
 	pb(stack_a, stack_b);
 	pb(stack_a, stack_b);
 	ft_mid(stack_a, mem);
