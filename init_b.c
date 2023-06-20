@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_b.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amema <amema@student.42.fr>                +#+  +:+       +#+        */
+/*   By: jcardina <jcardina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/12 17:14:27 by jcardina          #+#    #+#             */
-/*   Updated: 2023/06/20 15:43:55 by amema            ###   ########.fr       */
+/*   Updated: 2023/06/20 16:22:22 by jcardina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -140,7 +140,8 @@ void	order_5(t_listx **stack_a, t_listx **stack_b, t_memo *mem)
 			pa(stack_a, stack_b);
 			ft_mid(stack_a, mem);
 		}
-		rb(stack_b);
+		else if(ps_lstsize(*stack_b) == 2)
+			rb(stack_b);
 	}
 	ft_mid(stack_a, mem);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amema <amema@student.42.fr>                +#+  +:+       +#+        */
+/*   By: jcardina <jcardina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 12:29:13 by jcardina          #+#    #+#             */
-/*   Updated: 2023/06/20 15:45:01 by amema            ###   ########.fr       */
+/*   Updated: 2023/06/20 16:13:38 by jcardina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,8 @@ void	ps_lstadd_front(t_listx **lst, t_listx *new);
 void	ps_lstadd_back(t_listx **lst, t_listx *new);
 t_listx	*ps_lstlast(t_listx *lst);
 //inizializzare la lista
-void	list_init(int ac, char **av, t_listx **stack_a);
-void	fill_stack(char **av, t_listx **stack_a, int row_nb, int i);
+int		list_init(int ac, char **av, t_listx **stack_a);
+int		fill_stack(char **av, t_listx **stack_a, int row_nb, int i);
 void	index_init(t_listx **stack_a);
 void	inst_init(t_inst *inst);
 //pushare in b
@@ -94,5 +94,4 @@ void	ss(t_listx **stack_b, t_listx **stack_a);
 /* cose che mi mancano da fare
 4	fare il ceck dell'imput
 5	i leak dio bono
-6	sistemare caso del 5 con numeri tutti ordinati
 */
