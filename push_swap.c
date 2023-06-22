@@ -6,7 +6,7 @@
 /*   By: jcardina <jcardina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 14:10:51 by jcardina          #+#    #+#             */
-/*   Updated: 2023/06/22 16:32:23 by jcardina         ###   ########.fr       */
+/*   Updated: 2023/06/22 17:10:07 by jcardina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,10 +42,10 @@ int	list_init(int ac, char **av, t_listx **stack_a)
 			row_nb++;
 		if (fill_stack(number_matrix, stack_a, row_nb, 0) == -1)
 		{
-			free(number_matrix);
+			free_matrix(number_matrix);
 			return (-1);
 		}
-		free(number_matrix);
+		free_matrix(number_matrix);
 	}
 	else
 	{
@@ -77,6 +77,6 @@ int	main(int ac, char **av)
 		return (0);
 	init_b(&stack_a, &stack_b, &mem);
 	algoritm(&stack_a, &stack_b, &inst, &mem);
-	free_all(&stack_a, &mem, &inst);
+	free_all(&stack_a);//, &mem, &inst);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: jcardina <jcardina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 12:29:13 by jcardina          #+#    #+#             */
-/*   Updated: 2023/06/22 16:25:35 by jcardina         ###   ########.fr       */
+/*   Updated: 2023/06/22 17:09:46 by jcardina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,9 @@ typedef struct s_inst
 	int	cases;
 }	t_inst;
 
-void	free_all(t_listx **stack_a, t_memo *mem, t_inst *inst);
+//free
+void	free_all(t_listx **stack_a);
+void	free_matrix(char **matrix);
 //le funzione prese da libft
 t_listx	*ps_lstnew(int content);
 int		ps_lstsize(t_listx *lst);
