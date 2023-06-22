@@ -6,7 +6,7 @@
 /*   By: jcardina <jcardina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/19 16:13:59 by jcardina          #+#    #+#             */
-/*   Updated: 2023/06/22 16:31:33 by jcardina         ###   ########.fr       */
+/*   Updated: 2023/06/22 17:32:22 by jcardina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,19 @@
 
 int	ok_input(char **matrix, int i)
 {
-	int j;
-	int tmp;
+	int	j;
+	int	tmp;
 
-	tmp =  i;
-	if(matrix[++i] == NULL)
-		return(-1);
-	while(matrix[i])
+	tmp = i;
+	if (matrix[++i] == NULL)
+		return (-1);
+	while (matrix[i])
 	{
 		j = 0;
-		while(matrix[i][j])
+		while (matrix[i][j])
 		{
-			if ((matrix[i][j] < 58 && matrix[i][j] > 47) || (matrix[i][j] == 45))
+			if ((matrix[i][j] < 58 && matrix[i][j] > 47)
+				|| (matrix[i][j] == 45))
 				j++;
 			else
 				return (-1);
@@ -41,21 +42,21 @@ int	ok_input(char **matrix, int i)
 
 int	double_n(char **matrix, int i)
 {
-	int j;
+	int	j;
 
-	while(matrix[i])
+	while (matrix[i])
 	{
 		j = i + 1;
-		while(matrix[j])
+		while (matrix[j])
 		{
-			if(atoi(matrix[i]) != atoi(matrix[j]))
+			if (atoi(matrix[i]) != atoi(matrix[j]))
 				j++;
 			else
 				return (-1);
 		}
-		i ++;
+		i++;
 	}
-	return(1);
+	return (1);
 }
 
 int	min_max(char **matrix, int i)
@@ -66,14 +67,5 @@ int	min_max(char **matrix, int i)
 			return (-1);
 		i++;
 	}
-	return(1);
+	return (1);
 }
-
-// int	check_one(char **matrix, int i)
-// {
-// 	if(i == 1 && matrix[++i] == NULL)
-// 		return (-1);
-// 	else if (i == 0 && matrix[++i] == NULL)
-// 		return (-1);
-// 	return (1);
-// }

@@ -6,7 +6,7 @@
 /*   By: jcardina <jcardina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 12:04:34 by jcardina          #+#    #+#             */
-/*   Updated: 2023/06/19 15:17:00 by jcardina         ###   ########.fr       */
+/*   Updated: 2023/06/22 17:16:09 by jcardina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,11 +58,11 @@ int	moves_counter(int ia, int ib, t_listx **stack_a, t_listx **stack_b)
 	if ((ia <= (size_a / 2)) && (ib <= (size_b / 2)))
 		ret = ia + ib;
 	else if ((ia <= (size_a / 2)) && (ib > (size_b / 2)))
-		ret = ia + (size_b - ib);
+		ret = ia + (size_b - ib + 1);
 	else if ((ia > (size_a / 2)) && (ib <= (size_b / 2)))
 		ret = (size_a - ia) + ib;
 	else if ((ia > (size_a / 2)) && (ib > (size_b / 2)))
-		ret = (size_a - ia) + (size_b - ib);
+		ret = (size_a - ia) + (size_b - ib + 1);
 	return (ret);
 }
 

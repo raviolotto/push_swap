@@ -6,7 +6,7 @@
 /*   By: jcardina <jcardina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/14 18:06:56 by jcardina          #+#    #+#             */
-/*   Updated: 2023/06/20 16:03:35 by jcardina         ###   ########.fr       */
+/*   Updated: 2023/06/22 17:27:09 by jcardina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,15 @@
 
 int	stack_sorted(t_listx *stack)
 {
-    while (stack && stack->next)
-    {
-        if (stack->content > stack->next->content)
-            return 0; // non ordinari
-        stack = stack->next;
-    }
-    return 1; // ordinati
+	while (stack && stack->next)
+	{
+		if (stack->content > stack->next->content)
+			return (0);
+		stack = stack->next;
+	}
+	return (1);
 }
+
 void	ft_printlst(t_listx **stack_a)
 {
 	t_listx	*tmp;
