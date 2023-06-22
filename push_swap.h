@@ -6,7 +6,7 @@
 /*   By: jcardina <jcardina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 12:29:13 by jcardina          #+#    #+#             */
-/*   Updated: 2023/06/20 16:13:38 by jcardina         ###   ########.fr       */
+/*   Updated: 2023/06/22 16:25:35 by jcardina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ typedef struct s_inst
 	int	cases;
 }	t_inst;
 
+void	free_all(t_listx **stack_a, t_memo *mem, t_inst *inst);
 //le funzione prese da libft
 t_listx	*ps_lstnew(int content);
 int		ps_lstsize(t_listx *lst);
@@ -60,6 +61,8 @@ int		stack_sorted(t_listx *stack);
 // ok input
 int		ok_input(char **matrix, int i);
 int		double_n(char **matrix, int i);
+int		min_max(char **matrix, int i);
+int	check_one(char **matrix, int i);
 // algoritmo
 void	best_move(t_listx **stack_a, t_listx **stack_b, t_inst *inst);
 int		spot_finder(t_listx **stack_a, t_listx **stack_b);

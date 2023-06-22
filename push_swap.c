@@ -6,7 +6,7 @@
 /*   By: jcardina <jcardina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 14:10:51 by jcardina          #+#    #+#             */
-/*   Updated: 2023/06/20 16:16:11 by jcardina         ###   ########.fr       */
+/*   Updated: 2023/06/22 16:32:23 by jcardina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	fill_stack(char **av, t_listx **stack_a, int row_nb, int i)
 	t_listx	*tmp;
 	if (ok_input(av, i) == -1)
 		{
-			write(1, "Error\n", 6);
+			write(2, "Error\n", 6);
 			return (-1);
 		}
 	while (i < row_nb)
@@ -45,6 +45,7 @@ int	list_init(int ac, char **av, t_listx **stack_a)
 			free(number_matrix);
 			return (-1);
 		}
+		free(number_matrix);
 	}
 	else
 	{
@@ -76,6 +77,6 @@ int	main(int ac, char **av)
 		return (0);
 	init_b(&stack_a, &stack_b, &mem);
 	algoritm(&stack_a, &stack_b, &inst, &mem);
-	//ft_printlst(&stack_a);
+	free_all(&stack_a, &mem, &inst);
 	return (0);
 }

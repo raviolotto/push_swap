@@ -6,7 +6,7 @@
 #    By: jcardina <jcardina@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/12 15:52:29 by jcardina          #+#    #+#              #
-#    Updated: 2023/06/19 16:34:15 by jcardina         ###   ########.fr        #
+#    Updated: 2023/06/22 16:33:13 by jcardina         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,6 +18,7 @@ PRINTF = ft_printf/libftprintf.a
 
 SRC = \
 	listutils.c\
+	leak.c \
 	push_swap.c \
 	workutils.c \
 	init_b.c \
@@ -40,7 +41,7 @@ all: $(NAME)
 $(NAME) : $(OBJ)
 	make all bonus -C libft
 	make -C ft_printf
-	$(CC) $(CFLAGS) $(LIBFT) $(PRINTF) $(OBJ) -o push_swap
+	$(CC) $(CFLAGS) $(LIBFT) $(PRINTF) $(OBJ) -g -o push_swap
 	@echo "\033[32mcompiled\033[0m"
 
 clean:

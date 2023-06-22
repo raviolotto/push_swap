@@ -6,7 +6,7 @@
 /*   By: jcardina <jcardina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/19 16:13:59 by jcardina          #+#    #+#             */
-/*   Updated: 2023/06/19 17:04:03 by jcardina         ###   ########.fr       */
+/*   Updated: 2023/06/22 16:31:33 by jcardina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ int	ok_input(char **matrix, int i)
 	int tmp;
 
 	tmp =  i;
+	if(matrix[++i] == NULL)
+		return(-1);
 	while(matrix[i])
 	{
 		j = 0;
@@ -31,6 +33,8 @@ int	ok_input(char **matrix, int i)
 		i++;
 	}
 	if (double_n(matrix, tmp) == -1)
+		return (-1);
+	if (min_max(matrix, tmp) == -1)
 		return (-1);
 	return (1);
 }
@@ -53,3 +57,23 @@ int	double_n(char **matrix, int i)
 	}
 	return(1);
 }
+
+int	min_max(char **matrix, int i)
+{
+	while (matrix[i])
+	{
+		if (atoi(matrix[i]) > 2147483647 || atoi(matrix[i]) < -2147483648)
+			return (-1);
+		i++;
+	}
+	return(1);
+}
+
+// int	check_one(char **matrix, int i)
+// {
+// 	if(i == 1 && matrix[++i] == NULL)
+// 		return (-1);
+// 	else if (i == 0 && matrix[++i] == NULL)
+// 		return (-1);
+// 	return (1);
+// }
