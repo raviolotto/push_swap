@@ -6,7 +6,7 @@
 #    By: jcardina <jcardina@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/12 15:52:29 by jcardina          #+#    #+#              #
-#    Updated: 2023/06/22 18:05:12 by jcardina         ###   ########.fr        #
+#    Updated: 2023/06/26 19:51:48 by jcardina         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,6 +18,7 @@ PRINTF = ft_printf/libftprintf.a
 
 SRC = \
 	listutils.c\
+	list_init.c\
 	leak.c \
 	push_swap.c \
 	order_3n5.c \

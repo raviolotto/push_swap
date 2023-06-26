@@ -1,29 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker.c                                          :+:      :+:    :+:   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jcardina <jcardina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/26 16:31:46 by jcardina          #+#    #+#             */
-/*   Updated: 2023/06/26 19:49:36 by jcardina         ###   ########.fr       */
+/*   Created: 2023/02/22 18:35:23 by jacopo            #+#    #+#             */
+/*   Updated: 2023/06/26 19:43:06 by jcardina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "checker.h"
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
 
-int	main(int ac, char **av)
-{
-	t_listx	*sa;
-	t_listx	*sb;
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 10
+# endif
 
-	if (ac < 2)
-		return (0);
-	if (list_init(ac, av, &sa) == -1)
-	{
-		write(2, "Error\n", 6);
-		return(EXIT_FAILURE);
-	}
+# include "../libft/libft.h"
+# include <unistd.h>
+# include <sys/types.h>
+# include <sys/uio.h>
+# include <stdio.h>
+# include <stdlib.h>
 
-
-}
+char	*get_next_line(int fd);
+#endif
