@@ -6,7 +6,7 @@
 /*   By: jcardina <jcardina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 12:04:34 by jcardina          #+#    #+#             */
-/*   Updated: 2023/06/22 17:16:09 by jcardina         ###   ########.fr       */
+/*   Updated: 2023/06/26 18:44:33 by jcardina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	best_move(t_listx **stack_a, t_listx **stack_b, t_inst	*inst)
 	{
 		count = spot_finder(stack_a, &tmp);
 		moves = moves_counter(count, tmp ->index, stack_a, stack_b);
-		if (moves < moves_mem)
+		if (moves <= moves_mem)
 		{
 			inst ->a_index = count;
 			inst ->b_index = tmp ->index;

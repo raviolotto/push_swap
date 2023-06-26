@@ -6,7 +6,7 @@
 /*   By: jcardina <jcardina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/12 17:14:27 by jcardina          #+#    #+#             */
-/*   Updated: 2023/06/22 18:12:39 by jcardina         ###   ########.fr       */
+/*   Updated: 2023/06/26 19:05:17 by jcardina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,20 +62,24 @@ void	init_b(t_listx **stack_a, t_listx **stack_b, t_memo *mem)
 	t_listx	*tmp;
 
 	ft_mid(stack_a, mem);
-	while (ps_lstsize(*stack_a) != 3
-		&& ps_lstsize(*stack_a) != 2 && ps_lstsize(*stack_a) != 5)
+	if (ps_lstsize(*stack_a) == 2 || ps_lstsize(*stack_a) == 5)
+	{
+		cases(stack_a, stack_b, mem);
+		return ;
+	}
+	while (ps_lstsize(*stack_a) != 3)
 	{
 		tmp = *stack_a;
 		if ((tmp->content < mem->mid) && (tmp->content != mem->min))
-			pb(stack_a, stack_b);
+			pb(stack_a, stack_b, 1);
 		else if ((tmp ->content > mem ->mid) && (tmp -> content != mem ->max))
 		{
-			pb(stack_a, stack_b);
-			rb(stack_b);
+			pb(stack_a, stack_b, 1);
+			rb(stack_b, 1);
 		}
 		else if ((tmp->content == mem->min || tmp->content == mem->mid
 				|| tmp->content == mem-> max))
-			ra(stack_a);
+			ra(stack_a, 1);
 	}
 	cases(stack_a, stack_b, mem);
 }
@@ -85,7 +89,7 @@ void	cases(t_listx **stack_a, t_listx **stack_b, t_memo *mem)
 	if (ps_lstsize(*stack_a) == 2)
 	{
 		if ((*stack_a)->content == mem ->max)
-			ra(stack_a);
+			ra(stack_a, 1);
 	}
 	else if (ps_lstsize(*stack_a) == 5)
 		order_5(stack_a, stack_b, mem);

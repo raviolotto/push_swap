@@ -6,13 +6,13 @@
 /*   By: jcardina <jcardina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 17:50:06 by amema             #+#    #+#             */
-/*   Updated: 2023/06/12 20:12:09 by jcardina         ###   ########.fr       */
+/*   Updated: 2023/06/26 19:06:44 by jcardina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	sa(t_listx **stack_a)
+void	sa(t_listx **stack_a, int i)
 {
 	t_listx	*tmp;
 
@@ -21,11 +21,11 @@ void	sa(t_listx **stack_a)
 	tmp->next = (*stack_a)->next;
 	(*stack_a)->next = tmp;
 	index_init(stack_a);
-	write(1, "sa", 2);
-	write(1, "\n", 1);
+	if (i == 1)
+		write(1, "sa\n", 3);
 }
 
-void	sb(t_listx **stack_b)
+void	sb(t_listx **stack_b, int i)
 {
 	t_listx	*tmp;
 
@@ -34,11 +34,11 @@ void	sb(t_listx **stack_b)
 	tmp->next = (*stack_b)->next;
 	(*stack_b)->next = tmp;
 	index_init(stack_b);
-	write(1, "sb", 2);
-	write(1, "\n", 1);
+	if (i == 1)
+		write(1, "sb\n", 3);
 }
 
-void	ss(t_listx **stack_b, t_listx **stack_a)
+void	ss(t_listx **stack_b, t_listx **stack_a, int i)
 {
 	t_listx	*tmp;
 
@@ -52,6 +52,6 @@ void	ss(t_listx **stack_b, t_listx **stack_a)
 	(*stack_b)->next = tmp;
 	index_init(stack_b);
 	index_init(stack_a);
-	write(1, "ss", 2);
-	write(1, "\n", 1);
+	if (i == 1)
+		write(1, "ss\n", 3);
 }

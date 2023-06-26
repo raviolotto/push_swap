@@ -6,7 +6,7 @@
 /*   By: jcardina <jcardina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/19 16:13:59 by jcardina          #+#    #+#             */
-/*   Updated: 2023/06/22 17:32:22 by jcardina         ###   ########.fr       */
+/*   Updated: 2023/06/26 16:25:39 by jcardina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,15 +61,13 @@ int	double_n(char **matrix, int i)
 
 int	min_max(char **matrix, int i)
 {
-	long value;
+	long	value;
 
 	while (matrix[i])
 	{
 		value = ft_atoi(matrix[i]);
 		if (value > 2147483647 || value < -2147483648)
 			return (-1);
-		//else if (value < -2147483648)
-		//	return (-1);
 		i++;
 	}
 	return (1);

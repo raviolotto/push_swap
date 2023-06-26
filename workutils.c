@@ -6,7 +6,7 @@
 /*   By: jcardina <jcardina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/14 18:06:56 by jcardina          #+#    #+#             */
-/*   Updated: 2023/06/22 17:27:09 by jcardina         ###   ########.fr       */
+/*   Updated: 2023/06/26 18:30:07 by jcardina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,13 +87,13 @@ void	final_rotate(t_listx **stack_a, t_memo *m)
 			{
 				i = tmp ->index;
 				while (i++ < ps_lstsize(*stack_a))
-					rra(stack_a);
+					rra(stack_a, 1);
 			}
 			if (tmp ->index <= (ps_lstsize(*stack_a) / 2))
 			{
 				i = tmp ->index;
 				while (i-- > 0)
-					ra(stack_a);
+					ra(stack_a, 1);
 			}
 		}
 		tmp = tmp ->next;

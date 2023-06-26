@@ -6,7 +6,7 @@
 /*   By: jcardina <jcardina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 12:29:13 by jcardina          #+#    #+#             */
-/*   Updated: 2023/06/22 18:11:20 by jcardina         ###   ########.fr       */
+/*   Updated: 2023/06/26 18:25:46 by jcardina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,17 +84,17 @@ void	kyte(t_listx **stack_a, t_listx **stack_b, t_inst *inst);
 void	ft_printindex(t_listx **stack_a);
 void	ft_printlst(t_listx **stack_a);
 //mosse
-void	ra(t_listx **stack_a);
-void	rb(t_listx **stack_b);
-void	rr(t_listx **stack_a, t_listx **stack_b);
-void	rra(t_listx **stack_a);
-void	rrb(t_listx **stack_b);
-void	rrr(t_listx **stack_a, t_listx **stack_b);
-void	pb(t_listx **stack_a, t_listx **stack_b);
-void	pa(t_listx **stack_a, t_listx **stack_b);
-void	sa(t_listx **stack_a);
-void	sb(t_listx **stack_b);
-void	ss(t_listx **stack_b, t_listx **stack_a);
+void	ra(t_listx **stack_a, int i);
+void	rb(t_listx **stack_b, int i);
+void	rr(t_listx **stack_a, t_listx **stack_b, int i);
+void	rra(t_listx **stack_a, int i);
+void	rrb(t_listx **stack_b, int i);
+void	rrr(t_listx **stack_a, t_listx **stack_b, int i);
+void	pb(t_listx **stack_a, t_listx **stack_b, int i);
+void	pa(t_listx **stack_a, t_listx **stack_b, int i);
+void	sa(t_listx **stack_a, int i);
+void	sb(t_listx **stack_b, int i);
+void	ss(t_listx **stack_b, t_listx **stack_a, int i);
 
 #endif
 
