@@ -42,20 +42,20 @@ all: $(NAME)
 $(NAME) : $(OBJ)
 	make all bonus -C libft
 	make -C ft_printf
-	$(CC) $(CFLAGS) $(LIBFT) $(PRINTF) $(OBJ) -g -o push_swap
+	$(CC) $(OBJ) $(CFLAGS) $(LIBFT) $(PRINTF) -g -o push_swap
 	@echo "\033[32mcompiled\033[0m"
 
 clean:
 	make clean -C libft
 	make clean -C ft_printf
 	rm -f $(OBJ)
-	@echo "\033[33mniente sugo\033[0m"
+	@echo "\033[33mno sauce\033[0m"
 
 fclean: clean
 	make fclean -C libft
 	make fclean -C ft_printf
 	rm -f $(NAME)
-	@echo "\033[33me niente nome\033[0m"
+	@echo "\033[33m& no name\033[0m"
 
 re: fclean all
 

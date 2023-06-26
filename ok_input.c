@@ -61,10 +61,15 @@ int	double_n(char **matrix, int i)
 
 int	min_max(char **matrix, int i)
 {
+	long value;
+
 	while (matrix[i])
 	{
-		if (atoi(matrix[i]) > 2147483647 || atoi(matrix[i]) < -2147483648)
+		value = ft_atoi(matrix[i]);
+		if (value > 2147483647 || value < -2147483648)
 			return (-1);
+		//else if (value < -2147483648)
+		//	return (-1);
 		i++;
 	}
 	return (1);
