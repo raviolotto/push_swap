@@ -6,7 +6,7 @@
 /*   By: jcardina <jcardina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 14:10:51 by jcardina          #+#    #+#             */
-/*   Updated: 2023/06/26 19:53:34 by jcardina         ###   ########.fr       */
+/*   Updated: 2023/06/26 20:32:20 by jcardina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	main(int ac, char **av)
 	if (ac < 2)
 		return (0);
 	if (list_init(ac, av, &stack_a) == -1)
-		return (0);
+		exit(1);
 	init_b(&stack_a, &stack_b, &mem);
 	algoritm(&stack_a, &stack_b, &inst, &mem);
 	free_all(&stack_a);

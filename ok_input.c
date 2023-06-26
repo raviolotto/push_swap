@@ -6,7 +6,7 @@
 /*   By: jcardina <jcardina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/19 16:13:59 by jcardina          #+#    #+#             */
-/*   Updated: 2023/06/26 16:25:39 by jcardina         ###   ########.fr       */
+/*   Updated: 2023/06/26 20:39:23 by jcardina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ int	ok_input(char **matrix, int i)
 	tmp = i;
 	if (matrix[++i] == NULL)
 		return (-1);
+	i = tmp;
 	while (matrix[i])
 	{
 		j = 0;
