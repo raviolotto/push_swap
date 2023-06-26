@@ -6,13 +6,14 @@
 #    By: jcardina <jcardina@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/12 15:52:29 by jcardina          #+#    #+#              #
-#    Updated: 2023/06/26 19:51:48 by jcardina         ###   ########.fr        #
+#    Updated: 2023/06/26 22:39:05 by jcardina         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 MAKEFLAGS += --silent
 
 NAME = push_swap
+NAME_BONUS = checker
 LIBFT = libft/libft.a
 PRINTF = ft_printf/libftprintf.a
 
@@ -20,7 +21,6 @@ SRC = \
 	listutils.c\
 	list_init.c\
 	leak.c \
-	push_swap.c \
 	order_3n5.c \
 	workutils.c \
 	init_b.c \
@@ -31,6 +31,8 @@ SRC = \
 	moves/moves_s.c \
 	algoritm/best_move.c \
 	algoritm/inst_reader.c \
+	gnl/get_next_line.c \
+	push_swap.c\
 
 OBJ = $(SRC:%.c=%.o)
 
@@ -45,6 +47,12 @@ $(NAME) : $(OBJ)
 	make -C ft_printf
 	$(CC) $(OBJ) $(CFLAGS) $(LIBFT) $(PRINTF) -g -o push_swap
 	@echo "\033[32mcompiled\033[0m"
+
+# #bonus: $(OBJ)
+# 	make all bonus -C libft
+# 	make -C ft_printf
+# 	$(CC) $(OBJ) ./bonus/checker.c $(CFLAGS) $(LIBFT) $(PRINTF) -g -o $(NAME_BONUS)
+# 	@echo "\033[32mbonus compiled\033[0m"
 
 clean:
 	make clean -C libft
