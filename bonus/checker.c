@@ -6,7 +6,7 @@
 /*   By: jcardina <jcardina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/26 16:31:46 by jcardina          #+#    #+#             */
-/*   Updated: 2023/06/27 20:11:32 by jcardina         ###   ########.fr       */
+/*   Updated: 2023/06/27 20:32:14 by jcardina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ int	okorko(t_listx **stack_a)
 	tmp = *stack_a;
 	succ = (*stack_a)->next;
 	while(succ)
-	{mak
+	{
 		if (tmp->content < succ->content)
 		{
 			tmp = tmp->next;
@@ -80,8 +80,10 @@ int	main(int ac, char **av)
 	if (okorko(&stack_a) == -1)
 	{
 		write(1, "KO\n", 3);
+		free_all(&stack_a);
 		return (0);
 	}
 	write(1, "OK\n", 3);
+	free_all(&stack_a);
 	return (0);
 }
