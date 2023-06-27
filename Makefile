@@ -6,7 +6,7 @@
 #    By: jcardina <jcardina@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/12 15:52:29 by jcardina          #+#    #+#              #
-#    Updated: 2023/06/26 22:39:05 by jcardina         ###   ########.fr        #
+#    Updated: 2023/06/27 19:36:35 by jcardina         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,7 +34,26 @@ SRC = \
 	gnl/get_next_line.c \
 	push_swap.c\
 
+SRC_BONUS = \
+listutils.c\
+	list_init.c\
+	leak.c \
+	order_3n5.c \
+	workutils.c \
+	init_b.c \
+	ok_input.c \
+	moves/moves_r.c \
+	moves/moves_rr.c \
+	moves/moves_p.c \
+	moves/moves_s.c \
+	algoritm/best_move.c \
+	algoritm/inst_reader.c \
+	gnl/get_next_line.c \
+	bonus/checker.c \
+
 OBJ = $(SRC:%.c=%.o)
+
+OBJ_BONUS = $(SRC_BONUS:%.c=%.o)
 
 CC = gcc
 
@@ -48,22 +67,22 @@ $(NAME) : $(OBJ)
 	$(CC) $(OBJ) $(CFLAGS) $(LIBFT) $(PRINTF) -g -o push_swap
 	@echo "\033[32mcompiled\033[0m"
 
-# #bonus: $(OBJ)
-# 	make all bonus -C libft
-# 	make -C ft_printf
-# 	$(CC) $(OBJ) ./bonus/checker.c $(CFLAGS) $(LIBFT) $(PRINTF) -g -o $(NAME_BONUS)
-# 	@echo "\033[32mbonus compiled\033[0m"
+bonus:	$(OBJ_BONUS)
+	make all bonus -C libft
+	make -C ft_printf
+	$(CC) $(OBJ_BONUS) $(CFLAGS) $(LIBFT) $(PRINTF) -g -o checker
+	@echo "\033[32mbonus compiled\033[0m"
 
 clean:
 	make clean -C libft
 	make clean -C ft_printf
-	rm -f $(OBJ)
+	rm -f $(OBJ) $(OBJ_BONUS)
 	@echo "\033[33mno sauce\033[0m"
 
 fclean: clean
 	make fclean -C libft
 	make fclean -C ft_printf
-	rm -f $(NAME)
+	rm -f $(NAME) $(NAME_BONUS)
 	@echo "\033[33m& no name\033[0m"
 
 re: fclean all

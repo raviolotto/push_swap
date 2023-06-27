@@ -6,7 +6,7 @@
 /*   By: jcardina <jcardina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 17:50:06 by amema             #+#    #+#             */
-/*   Updated: 2023/06/26 19:06:44 by jcardina         ###   ########.fr       */
+/*   Updated: 2023/06/27 19:34:59 by jcardina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	sa(t_listx **stack_a, int i)
 {
 	t_listx	*tmp;
 
+	if (ps_lstsize(*stack_a) == 1 || *stack_a == NULL)
+		return ;
 	tmp = *stack_a;
 	*stack_a = (*stack_a)->next;
 	tmp->next = (*stack_a)->next;
@@ -29,6 +31,8 @@ void	sb(t_listx **stack_b, int i)
 {
 	t_listx	*tmp;
 
+	if (ps_lstsize(*stack_b) == 1 || *stack_b == NULL)
+		return ;
 	tmp = *stack_b;
 	*stack_b = (*stack_b)->next;
 	tmp->next = (*stack_b)->next;
@@ -42,6 +46,8 @@ void	ss(t_listx **stack_b, t_listx **stack_a, int i)
 {
 	t_listx	*tmp;
 
+	if (ps_lstsize(*stack_a) <= 1 || ps_lstsize(*stack_b) <= 1)
+		return ;
 	tmp = *stack_a;
 	*stack_a = (*stack_a)->next;
 	tmp->next = (*stack_a)->next;
