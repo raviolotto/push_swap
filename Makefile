@@ -6,7 +6,7 @@
 #    By: jcardina <jcardina@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/12 15:52:29 by jcardina          #+#    #+#              #
-#    Updated: 2023/06/27 19:36:35 by jcardina         ###   ########.fr        #
+#    Updated: 2023/06/28 17:22:31 by jcardina         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,7 +35,7 @@ SRC = \
 	push_swap.c\
 
 SRC_BONUS = \
-listutils.c\
+	listutils.c\
 	list_init.c\
 	leak.c \
 	order_3n5.c \
