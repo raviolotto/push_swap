@@ -6,12 +6,24 @@
 /*   By: jcardina <jcardina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 14:10:51 by jcardina          #+#    #+#             */
-/*   Updated: 2023/06/26 20:32:20 by jcardina         ###   ########.fr       */
+/*   Updated: 2023/06/28 20:28:37 by jcardina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+int	check_av(char *str)
+{
+	int i;
+
+	i = -1;
+	while(str[++i])
+	{
+		if(str[i] != ' ')
+			return (0);
+	}
+	return(-1);
+}
 int	main(int ac, char **av)
 {
 	t_listx	*stack_a;
@@ -21,9 +33,9 @@ int	main(int ac, char **av)
 
 	stack_a = NULL;
 	stack_b = NULL;
+	if (ac == 1)
+	 	return (0);
 	inst_init(&inst);
-	if (ac < 2)
-		return (0);
 	if (list_init(ac, av, &stack_a) == -1)
 		exit(1);
 	init_b(&stack_a, &stack_b, &mem);

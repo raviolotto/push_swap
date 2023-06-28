@@ -6,7 +6,7 @@
 /*   By: jcardina <jcardina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 12:29:13 by jcardina          #+#    #+#             */
-/*   Updated: 2023/06/26 18:25:46 by jcardina         ###   ########.fr       */
+/*   Updated: 2023/06/28 20:24:55 by jcardina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,7 @@ int		ok_input(char **matrix, int i);
 int		double_n(char **matrix, int i);
 int		min_max(char **matrix, int i);
 int		check_one(char **matrix, int i);
+int	check_av(char *str);
 // algoritmo
 void	best_move(t_listx **stack_a, t_listx **stack_b, t_inst *inst);
 int		spot_finder(t_listx **stack_a, t_listx **stack_b);

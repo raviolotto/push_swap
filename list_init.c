@@ -6,7 +6,7 @@
 /*   By: jcardina <jcardina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/26 19:51:19 by jcardina          #+#    #+#             */
-/*   Updated: 2023/06/26 20:34:38 by jcardina         ###   ########.fr       */
+/*   Updated: 2023/06/28 20:25:58 by jcardina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,8 @@ int	list_init(int ac, char **av, t_listx **stack_a)
 	row_nb = 0;
 	if (ac == 2)
 	{
+		if (ft_strlen(av[1]) < 3 || check_av(av[1]) == -1)
+			return (-1);
 		number_matrix = ft_split(av[1], ' ');
 		while (number_matrix[row_nb] != NULL)
 			row_nb++;

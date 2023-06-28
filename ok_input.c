@@ -6,7 +6,7 @@
 /*   By: jcardina <jcardina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/19 16:13:59 by jcardina          #+#    #+#             */
-/*   Updated: 2023/06/26 20:39:23 by jcardina         ###   ########.fr       */
+/*   Updated: 2023/06/28 20:34:14 by jcardina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	ok_input(char **matrix, int i)
 		while (matrix[i][j])
 		{
 			if ((matrix[i][j] < 58 && matrix[i][j] > 47)
-				|| (matrix[i][j] == 45))
+				|| ((matrix[i][j] == 45) && j == 0))
 				j++;
 			else
 				return (-1);
