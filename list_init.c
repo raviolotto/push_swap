@@ -6,7 +6,7 @@
 /*   By: jcardina <jcardina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/26 19:51:19 by jcardina          #+#    #+#             */
-/*   Updated: 2023/06/29 05:16:42 by jcardina         ###   ########.fr       */
+/*   Updated: 2023/06/29 17:28:21 by jcardina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,4 +59,17 @@ void	inst_init(t_inst *inst)
 {
 	inst ->a_index = 21474836;
 	inst ->b_index = 21474836;
+}
+
+int	check_av(char *str)
+{
+	int	i;
+
+	i = -1;
+	while (str[++i])
+	{
+		if (str[i] != ' ')
+			return (0);
+	}
+	return (-1);
 }
