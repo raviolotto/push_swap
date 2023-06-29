@@ -6,7 +6,7 @@
 /*   By: jcardina <jcardina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/26 19:51:19 by jcardina          #+#    #+#             */
-/*   Updated: 2023/06/28 20:25:58 by jcardina         ###   ########.fr       */
+/*   Updated: 2023/06/29 05:16:42 by jcardina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,7 @@ int	fill_stack(char **av, t_listx **stack_a, int row_nb, int i)
 	t_listx	*tmp;
 
 	if (ok_input(av, i) == -1)
-	{
-		write(2, "Error\n", 6);
 		return (-1);
-	}
 	while (i < row_nb)
 	{
 		tmp = ps_lstnew(ft_atoi(av[i]));

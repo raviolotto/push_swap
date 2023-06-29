@@ -6,7 +6,7 @@
 /*   By: jcardina <jcardina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 12:29:13 by jcardina          #+#    #+#             */
-/*   Updated: 2023/06/28 20:24:55 by jcardina         ###   ########.fr       */
+/*   Updated: 2023/06/29 05:00:45 by jcardina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ typedef struct s_inst
 }	t_inst;
 
 //free
-void	free_all(t_listx **stack_a);
+int		free_all(t_listx **stack_a);
 void	free_matrix(char **matrix);
 //le funzione prese da libft
 t_listx	*ps_lstnew(int content);
@@ -67,7 +67,8 @@ int		ok_input(char **matrix, int i);
 int		double_n(char **matrix, int i);
 int		min_max(char **matrix, int i);
 int		check_one(char **matrix, int i);
-int	check_av(char *str);
+int		check_av(char *str);
+int		okorko2(t_listx **stack_a);
 // algoritmo
 void	best_move(t_listx **stack_a, t_listx **stack_b, t_inst *inst);
 int		spot_finder(t_listx **stack_a, t_listx **stack_b);
@@ -98,7 +99,3 @@ void	sb(t_listx **stack_b, int i);
 void	ss(t_listx **stack_b, t_listx **stack_a, int i);
 
 #endif
-
-/* cose che mi mancano da fare
-4	norma
-*/

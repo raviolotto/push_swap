@@ -6,7 +6,7 @@
 /*   By: jcardina <jcardina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/19 16:13:59 by jcardina          #+#    #+#             */
-/*   Updated: 2023/06/28 20:34:14 by jcardina         ###   ########.fr       */
+/*   Updated: 2023/06/29 04:19:49 by jcardina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,4 +72,24 @@ int	min_max(char **matrix, int i)
 		i++;
 	}
 	return (1);
+}
+
+int	okorko2(t_listx **stack_a)
+{
+	t_listx	*tmp;
+	t_listx	*succ;
+
+	tmp = *stack_a;
+	succ = (*stack_a)->next;
+	while (succ)
+	{
+		if (tmp->content < succ->content)
+		{
+			tmp = tmp->next;
+			succ = succ->next;
+		}
+		else
+			return (-1);
+	}
+	return (0);
 }
