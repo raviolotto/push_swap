@@ -6,7 +6,7 @@
 /*   By: jcardina <jcardina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 14:10:51 by jcardina          #+#    #+#             */
-/*   Updated: 2023/06/29 05:19:38 by jcardina         ###   ########.fr       */
+/*   Updated: 2023/06/29 16:46:00 by jcardina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ int	main(int ac, char **av)
 	if (list_init(ac, av, &stack_a) == -1)
 	{
 		write(2, "Error\n", 6);
-		exit(1);
+		return (EXIT_FAILURE);
 	}
 	if (okorko2(&stack_a) == 0)
 		return (free_all(&stack_a));
